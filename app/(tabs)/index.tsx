@@ -11,8 +11,6 @@ export default function Index() {
                 alignItems: "center",
             }}
         >
-            <Text>Edit app/index.tsx to edit this screen.</Text>
-
             <TouchableOpacity onPress={toggleDarkMode}>
                 <Text>Toggle mode</Text>
             </TouchableOpacity>
