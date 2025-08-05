@@ -1,19 +1,28 @@
+import { createHomeStyles } from "@/assets/styles/home.styles";
+import Header from "@/components/Header";
+import TodoInput from "@/components/TodoInput";
 import useTheme from "@/hooks/useTheme";
-import { Text, TouchableOpacity, View } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
+import React from "react";
+import { SafeAreaView, StatusBar, Text, TouchableOpacity } from "react-native";
 
 export default function Index() {
-    const { toggleDarkMode } = useTheme();
+    const { toggleDarkMode, colors } = useTheme();
+    const homeStyles = createHomeStyles(colors);
+
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >
-            <TouchableOpacity onPress={toggleDarkMode}>
-                <Text>Toggle mode</Text>
-            </TouchableOpacity>
-        </View>
+        <LinearGradient colors={colors.gradients.background} style={homeStyles.container}>
+            <StatusBar barStyle={colors.statusBarStyle} />
+            <SafeAreaView style={homeStyles.safeArea}>
+                <Header />
+                <TodoInput />
+                <TouchableOpacity onPress={toggleDarkMode}>
+                    <Text>Toggle mode</Text>
+                </TouchableOpacity>
+
+            </SafeAreaView>
+        </LinearGradient>
     );
 }
+
+
