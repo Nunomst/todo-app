@@ -56,11 +56,11 @@ export default function Index() {
                             ]}
                         >
                             {item.isCompleted && <Ionicons name="checkmark" size={18} color={"#fff"} />}
-
                         </LinearGradient>
                     </TouchableOpacity>
 
                     <View style={homeStyles.todoTextContainer}>
+
                         <Text
                             style={[
                                 homeStyles.todoText,
@@ -86,6 +86,7 @@ export default function Index() {
                                 </LinearGradient>
                             </TouchableOpacity>
                         </View>
+
                     </View>
                 </LinearGradient>
             </View>
