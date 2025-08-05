@@ -1,11 +1,18 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import useTheme from '@/hooks/useTheme';
+import React from 'react';
+import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 
 const SettingsScreen = () => {
+    const { toggleDarkMode, colors } = useTheme();
+
     return (
-        <View>
+        <SafeAreaView>
             <Text>SettingsScreen</Text>
-        </View>
+
+            <TouchableOpacity onPress={toggleDarkMode}>
+                <Text>Toggle mode</Text>
+            </TouchableOpacity>
+        </SafeAreaView>
     )
 }
 
